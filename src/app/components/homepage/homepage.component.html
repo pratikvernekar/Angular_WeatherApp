@@ -1,1 +1,25 @@
-<p>homepage works!</p>
+<div class="main">
+    <p class="city-text">Udupi,KA</p>
+    <div class="fav-div">
+        <img src="../../../assets/images/icon_favourite.png" style="width: 20px ;height:20px">
+        Add to favourite
+    </div>
+    <img src="../../../assets/images/icon_favourite.png"
+        style="width: 100px ;height: 100px;align-self: center;margin-top: 8rem;">
+
+    <div style="display:flex;
+    justify-content: center;align-items: center;">
+        <p class="temp-text" *ngIf="isCelsius">99</p>
+        <p class="temp-text" *ngIf="!isCelsius">69</p>
+        <div class="toggle-btn" (click)="convertTemperature()">
+            <div [ngClass]="isCelsius ? 'celciusActive' : 'celciusInactive'">
+                °C
+            </div>
+            <div [ngClass]="!isCelsius ? 'celciusActive' : 'celciusInactive'">
+                °F
+            </div>
+        </div>
+    </div>
+    <p class="city-text climate-text">Udupi,KA</p>
+
+</div>

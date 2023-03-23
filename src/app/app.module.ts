@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FavouritepageComponent } from './components/favouritepage/favouritepage.component';
 import { RescentpageComponent } from './components/rescentpage/rescentpage.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,9 @@ import { RescentpageComponent } from './components/rescentpage/rescentpage.compo
     HomepageComponent,
     FavouritepageComponent,
     RescentpageComponent,
-    
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, MatSlideToggleModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

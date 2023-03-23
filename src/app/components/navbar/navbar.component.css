@@ -20,15 +20,17 @@
 .navLinks a {
   /* border: 1px solid; */
   text-decoration: none;
-  cursor: pointer;
-  padding: 11px 0px;
+  cursor:pointer ;
+  padding: 10px 0px;
   box-sizing: border-box;
+  width: fit-content;
   /* color: white; */
 }
 .active {
   color: #ffd639;
   border-bottom: 3px solid #ffd639;
+  font-size: 1.1rem;
 }
-.date{
-    color: white;
+.date {
+  color: white;
 }

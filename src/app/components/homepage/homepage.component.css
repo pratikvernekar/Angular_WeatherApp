@@ -1,0 +1,50 @@
+.main {
+  min-height: calc(100vh - 7rem - 42px);
+  /* border: 1px solid; */
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.city-text {
+  color: white;
+  font-size: 1.4rem;
+  margin: 4rem 0 0 0;
+}
+.fav-div {
+  margin: 2rem 0 0 0;
+}
+.temp-text {
+  font-size: 4rem;
+  align-self: center;
+  margin-top: 3rem;
+}
+.toggle-btn {
+  border: 0px solid;
+  height: 30px;
+  width: 60px;
+  border-radius: 4px;
+  margin: 3rem 0 0 1rem;
+  display: flex;
+}
+.climate-text {
+  align-self: center;
+}
+.celciusActive {
+  /* border: 1px solid; */
+  width: 30px;
+  /* border-radius: 4px */
+  /* border-radius: 10px; */
+  background-color: white;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.celciusInactive {
+  border: 1px solid;
+  /* border-radius: 10px; */
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
