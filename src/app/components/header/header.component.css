@@ -1,11 +1,11 @@
 .header {
-  border: 1px solid;
+  /* border: 1px solid; */
   min-height: 7rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 5rem;
+  /* padding: 0px 5rem; */
 }
 .web_search_div {
   height: 2rem;
@@ -18,4 +18,19 @@
   align-items: center;
   box-sizing: border-box;
   padding: 0px 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.input_text {
+  background-color: transparent;
+  border: 0px;
+  height: 40px;
+  width: 90%;
+  font-size: 1.2rem;
+  color: white;
+}
+.input_text::placeholder {
+  color: white;
+}
+.input_text:focus {
+  outline: none;
 }

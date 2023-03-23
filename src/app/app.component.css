@@ -3,3 +3,9 @@
   width: 100vw;
   background: linear-gradient(to right, #5d42b1, #ae558b);
 }
+@media only screen and (min-width: 800px) {
+  .main {
+    padding: 0px 8rem;
+    box-sizing: border-box;
+  }
+}
