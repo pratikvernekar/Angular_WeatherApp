@@ -1,0 +1,21 @@
+.header {
+  border: 1px solid;
+  min-height: 7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5rem;
+}
+.web_search_div {
+  height: 2rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  min-width: 40%;
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0px 1rem;
+}
