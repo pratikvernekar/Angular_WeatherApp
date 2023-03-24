@@ -1,16 +1,15 @@
 <div class="main">
-    <p class="city-text">Udupi,KA</p>
+    <p class="city-text">{{data.name}}</p>
     <div class="fav-div">
         <img src="../../../assets/images/icon_favourite.png" style="width: 20px ;height:20px">
         Add to favourite
     </div>
-    <img src="../../../assets/images/icon_favourite.png"
-        style="width: 100px ;height: 100px;align-self: center;margin-top: 8rem;">
+    <img src="{{img}}" style="width: 100px ;height: 100px;align-self: center;margin-top: 8rem;">
 
     <div style="display:flex;
     justify-content: center;align-items: center;">
-        <p class="temp-text" *ngIf="isCelsius">99</p>
-        <p class="temp-text" *ngIf="!isCelsius">69</p>
+        <p class="temp-text" *ngIf="isCelsius">{{(data.main.temp- 273.15).toFixed(1)}}</p>
+        <p class="temp-text" *ngIf="!isCelsius">{{((data.main.temp- 273.15)*1.8+32).toFixed(1)}}</p>
         <div class="toggle-btn" (click)="convertTemperature()">
             <div [ngClass]="isCelsius ? 'celciusActive' : 'celciusInactive'">
                 °C
@@ -20,7 +19,7 @@
             </div>
         </div>
     </div>
-    <p class="city-text climate-text">Udupi,KA</p>
+    <p class="city-text climate-text">{{data.weather[0].description}}</p>
     <app-weatherdetails></app-weatherdetails>
 
 </div>

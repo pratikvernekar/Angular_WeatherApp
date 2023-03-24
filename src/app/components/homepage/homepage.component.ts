@@ -9,10 +9,17 @@ import { WeatherService } from 'src/app/service/weather.service';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
+  data: any;
+  img: any;
   ngOnInit(): void {
     this.weatherService.getWeather().subscribe({
       next: (res) => {
-        console.log(res);
+        this.data = res;
+        this.img =
+          'https://openweathermap.org/img/wn/' +
+          this.data.weather[0].icon +
+          '@2x.png';
+        console.log(this.data);
       },
       error: (error) => console.log(error.message),
       complete: () => console.info('API call completed'),
