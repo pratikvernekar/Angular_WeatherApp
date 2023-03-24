@@ -1,11 +1,9 @@
 .header {
-  /* border: 1px solid; */
   min-height: 7rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0px 5rem; */
 }
 .web_search_div {
   height: 2rem;
