@@ -9,7 +9,23 @@ export class WeatherService {
 
   getWeather() {
     return this.http.get(
-      'https://api.openweathermap.org/data/2.5/weather?q=germany&appid=76c425f83d3dd4a696721e5d4d4cc3fe'
+      'https://api.openweathermap.org/data/2.5/weather?q=kala&appid=76c425f83d3dd4a696721e5d4d4cc3fe'
+    );
+  }
+
+  getCities(string:string) {
+
+    console.log('srriinn',string);
+    
+    return this.http.get(
+      `https://weatherapi-com.p.rapidapi.com/search.json?q=${string}`,
+      {
+        headers: {
+          'X-RapidAPI-Key':
+            '2e61d5ed65msh6e1fd3b3e86180ap10576cjsn6e517a01ff1e',
+          'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
+        },
+      }
     );
   }
 }

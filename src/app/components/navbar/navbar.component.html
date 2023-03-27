@@ -5,6 +5,8 @@
         <a routerLink="favourite" routerLinkActive="active">FAVOURITE</a>
         <a routerLink="rescent" routerLinkActive="active">RESCENT SEARCH</a>
     </div>
+
     <div class="date"> {{ date | date : "E" | titlecase }},&nbsp;{{ date | date : "mediumDate" | titlecase
-        }}&nbsp;&nbsp;&nbsp;&nbsp;{{ date | date : "shortTime" | uppercase }}</div>
+        }}&nbsp;&nbsp;&nbsp;&nbsp;{{ date | date : "shortTime" | uppercase }}
+    </div>
 </nav>

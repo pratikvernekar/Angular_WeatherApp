@@ -3,9 +3,13 @@
     <img src="../../../assets/images/01_Home/logo_web.png" style="width: 142 ;height:30px">
 
     <div class="web_search_div">
-        <input class="input_text"
-        placeholder="Search city"
-        />
-        <img src="../../../assets/images/01_Home/Group2/icon_search_white.png" >
+        <input class="input_text" placeholder="Search city" [(ngModel)]="text" (ngModelChange)="changeFn($event)" />
+        <img src="../../../assets/images/01_Home/Group2/icon_search_white.png">
+
+        <div class="cities-div-web" *ngIf="data.length>0">
+            <p *ngFor="let city of data" (click)="onSave(city.name)">{{city.name}}</p>
+        </div>
+
     </div>
+
 </div>

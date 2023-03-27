@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { Subscriber } from 'rxjs';
 import { WeatherService } from 'src/app/service/weather.service';
 
 @Component({
@@ -19,7 +18,7 @@ export class HomepageComponent implements OnInit {
           'https://openweathermap.org/img/wn/' +
           this.data.weather[0].icon +
           '@2x.png';
-        console.log(this.data);
+        // console.log(this.data);
       },
       error: (error) => console.log(error.message),
       complete: () => console.info('API call completed'),

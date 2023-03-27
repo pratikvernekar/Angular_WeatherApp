@@ -17,6 +17,7 @@
   box-sizing: border-box;
   padding: 0px 1rem;
   background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
 }
 .input_text {
   background-color: transparent;
@@ -31,4 +32,33 @@
 }
 .input_text:focus {
   outline: none;
+}
+.cities-div-web {
+  position: absolute;
+  width: 95%;
+  border: 1px solid white;
+  border-radius: 7px;
+  text-align: center;
+  top: 50px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  animation: search 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.cities-div-web p {
+  width: 100%;
+  margin: 0px auto;
+  font-size: 1.4rem;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.cities-div-web p:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 7px;
 }

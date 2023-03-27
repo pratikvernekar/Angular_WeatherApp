@@ -10,6 +10,7 @@ import { RescentpageComponent } from './components/rescentpage/rescentpage.compo
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WeatherdetailsComponent } from './components/weatherdetails/weatherdetails.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
     RescentpageComponent,
     WeatherdetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatSlideToggleModule,HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatSlideToggleModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
