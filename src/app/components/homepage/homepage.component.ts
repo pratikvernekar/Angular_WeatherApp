@@ -12,8 +12,11 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     let d: any = localStorage.getItem('weatherData');
     this.data = JSON.parse(d);
-    console.log('weadata',this.data);
-    
+    this.img =
+      'https://openweathermap.org/img/wn/' +
+      this.data.weather[0].icon +
+      '@2x.png';
+
   }
   color: ThemePalette = 'accent';
   isCelsius: boolean = true;

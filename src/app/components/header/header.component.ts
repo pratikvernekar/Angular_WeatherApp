@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from 'src/app/service/weather.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,50 +11,55 @@ export class HeaderComponent implements OnInit {
   img: any;
   weatherData: any;
   text: string = '';
+  rescentData: any = [];
+  rescentArray: any = [];
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService, public router: Router) {}
   ngOnInit(): void {
-    // this.weatherService.getWeather().subscribe({
-    //   next: (res) => {
-    //     this.weatherData = res;
-    //     this.img =
-    //       'https://openweathermap.org/img/wn/' +
-    //       this.weatherData.weather[0].icon +
-    //       '@2x.png';
-    //     // localStorage.setItem('weatherData', JSON.stringify(e));
-    //     // console.log(this.data);
-    //   },
-    //   error: (error) => console.log(error.message),
-    //   complete: () => console.info('API call completed'),
-    // });
+    // localStorage.clear()
+ 
   }
   changeFn(event: any) {
-    // console.log(event);
     this.weatherService.getCities(event).subscribe((res: any) => {
-      // console.log(res);
       this.data = res;
-      console.log('hi', this.data);
     });
+    const d: any = localStorage.getItem('rescentData');
+    console.log(JSON.parse(d));
   }
 
   onSave(e: any) {
-    console.log('345678', e);
     this.data.length = 0;
     this.text = '';
+    console.log(e);
     this.weatherService.getWeather(e).subscribe({
       next: (res) => {
         this.weatherData = res;
-        this.img =
-          'https://openweathermap.org/img/wn/' +
-          this.weatherData.weather[0].icon +
-          '@2x.png';
         localStorage.setItem('weatherData', JSON.stringify(this.weatherData));
-        const r = localStorage.getItem('weatherData');
-        console.log(r);
+        if (this.weatherData) {
+          if (localStorage.getItem('rescentData')) {
+            this.rescentData = localStorage.getItem('rescentData');
+            let data = JSON.parse(this.rescentData);
+            this.rescentArray = [this.weatherData, ...data];
+            // console.log('before push', this.rescentArray);
+          } else {
+            this.rescentArray = [this.weatherData];
+            // console.log('before push', this.rescentArray);
+          }
+          localStorage.setItem(
+            'rescentData',
+            JSON.stringify(this.rescentArray)
+          );
+        }
+        this.refresh();
       },
       error: (error) => console.log(error.message),
       complete: () => console.info('API call completed'),
     });
   }
-  //     this.weatherDetails = JSON.parse(data);
+
+  refresh() {
+    this.router.navigate(['']).then(() => {
+      window.location.reload();
+    });
+  }
 }

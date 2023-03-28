@@ -1,0 +1,80 @@
+.card-container {
+  border: 1px solid wheat;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card-container-web {
+  /* border: 1px solid red; */
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.no-of-cards {
+  /* border: 1px solid wheat; */
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  color: white;
+}
+.card {
+  border-radius: 7px;
+  /* border: 1px solid; */
+  height: 100px;
+  width: 90%;
+  margin: 2.3px 0px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.card-city-text {
+  color: #fad05b;
+  text-transform: capitalize;
+  font-size: 1rem;
+  /* border: 1px solid; */
+  width: 7rem;
+  cursor: pointer;
+}
+.card-temp-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.web span {
+  color: white;
+}
+.card-climate-text {
+  font-size: 1rem;
+  /* border: 1px solid; */
+  text-align: center;
+  width: 180px;
+}
+.card-innertext-div {
+  /* border: 1px solid; */
+  width: 60%;
+}
+.card-climate-img {
+  width: 30px;
+  height: 30px;
+  /* border: 1px solid; */
+}
+.web {
+  /* border: 1px solid; */
+  display: flex;
+  width: 18rem;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}

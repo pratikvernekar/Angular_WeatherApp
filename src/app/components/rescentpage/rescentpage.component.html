@@ -1,1 +1,21 @@
-<p>rescentpage works!</p>
+<div class="card-container-web">
+    <div class="no-of-cards">
+
+        <p>{{rescentList.length}} City added as Rescent Search</p>
+        <p>Remove All</p>
+
+    </div>
+    <div class="card" *ngFor="let data of rescentList">
+        <div class="card-innertext-div">
+            <p class="card-city-text">{{data.name}}</p>
+        </div>
+        <div class="web">
+            <img src={{img}} class="card-climate-img" />
+            <span class="card-temp-text">{{(data.main.temp- 273.15).toFixed(1)}}</span>
+            <span> °C </span>
+            <span class="card-climate-text">{{data.weather[0].description}}</span>
+        </div>
+        <!-- <img src={likeactive} className="card-likeactive-img" /> -->
+    </div>
+
+</div>
