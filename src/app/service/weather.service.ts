@@ -9,14 +9,12 @@ export class WeatherService {
 
   getWeather() {
     return this.http.get(
-      'https://api.openweathermap.org/data/2.5/weather?q=kala&appid=76c425f83d3dd4a696721e5d4d4cc3fe'
+      `https://api.openweathermap.org/data/2.5/weather?q=udupi&appid=76c425f83d3dd4a696721e5d4d4cc3fe`
     );
   }
 
-  getCities(string:string) {
+  getCities(string: string) {
 
-    console.log('srriinn',string);
-    
     return this.http.get(
       `https://weatherapi-com.p.rapidapi.com/search.json?q=${string}`,
       {

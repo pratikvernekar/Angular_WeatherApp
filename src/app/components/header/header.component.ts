@@ -8,22 +8,52 @@ import { WeatherService } from 'src/app/service/weather.service';
 })
 export class HeaderComponent implements OnInit {
   data: any;
+  img: any;
+  weatherData: any;
   text: string = '';
+
   constructor(private weatherService: WeatherService) {}
-  ngOnInit(): void {}
-  changeFn(e: any) {
-    console.log(e);
-    this.weatherService.getCities(e).subscribe({
-      next: (res: any) => {
-        this.data = res;
+  ngOnInit(): void {
+    // this.weatherService.getWeather().subscribe({
+    //   next: (res) => {
+    //     this.weatherData = res;
+    //     this.img =
+    //       'https://openweathermap.org/img/wn/' +
+    //       this.weatherData.weather[0].icon +
+    //       '@2x.png';
+    //     // localStorage.setItem('weatherData', JSON.stringify(e));
+    //     // console.log(this.data);
+    //   },
+    //   error: (error) => console.log(error.message),
+    //   complete: () => console.info('API call completed'),
+    // });
+  }
+  changeFn(event: any) {
+    // console.log(event);
+    this.weatherService.getCities(event).subscribe((res: any) => {
+      // console.log(res);
+      this.data = res;
+      console.log('hi',this.data);
+    });
+  }
+
+  onSave(e: any) {
+    // console.log(e);
+    this.data.length = 0;
+    this.text = '';
+    this.weatherService.getWeather().subscribe({
+      next: (res) => {
+        this.weatherData = res;
+        this.img =
+          'https://openweathermap.org/img/wn/' +
+          this.weatherData.weather[0].icon +
+          '@2x.png';
+        localStorage.setItem('weatherData', JSON.stringify(e));
+        // console.log(this.data);
       },
-      error: () => console.log('error in getting cities'),
+      error: (error) => console.log(error.message),
       complete: () => console.info('API call completed'),
     });
   }
-  onSave(e: any) {
-    console.log(e);
-    this.data.length = 0;
-    this.text=''
-  }
+  //     this.weatherDetails = JSON.parse(data);
 }

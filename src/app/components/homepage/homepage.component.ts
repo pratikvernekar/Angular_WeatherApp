@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { WeatherService } from 'src/app/service/weather.service';
 
 @Component({
   selector: 'app-homepage',
@@ -11,22 +10,14 @@ export class HomepageComponent implements OnInit {
   data: any;
   img: any;
   ngOnInit(): void {
-    this.weatherService.getWeather().subscribe({
-      next: (res) => {
-        this.data = res;
-        this.img =
-          'https://openweathermap.org/img/wn/' +
-          this.data.weather[0].icon +
-          '@2x.png';
-        // console.log(this.data);
-      },
-      error: (error) => console.log(error.message),
-      complete: () => console.info('API call completed'),
-    });
+    let d: any = localStorage.getItem('weatherData');
+    this.data = JSON.parse(d);
+    console.log('weadata',this.data);
+    
   }
   color: ThemePalette = 'accent';
   isCelsius: boolean = true;
-  constructor(private weatherService: WeatherService) {}
+  constructor() {}
 
   convertTemperature(): void {
     this.isCelsius = !this.isCelsius;
