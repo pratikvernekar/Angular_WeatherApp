@@ -33,23 +33,24 @@ export class HeaderComponent implements OnInit {
     this.weatherService.getCities(event).subscribe((res: any) => {
       // console.log(res);
       this.data = res;
-      console.log('hi',this.data);
+      console.log('hi', this.data);
     });
   }
 
   onSave(e: any) {
-    // console.log(e);
+    console.log('345678', e);
     this.data.length = 0;
     this.text = '';
-    this.weatherService.getWeather().subscribe({
+    this.weatherService.getWeather(e).subscribe({
       next: (res) => {
         this.weatherData = res;
         this.img =
           'https://openweathermap.org/img/wn/' +
           this.weatherData.weather[0].icon +
           '@2x.png';
-        localStorage.setItem('weatherData', JSON.stringify(e));
-        // console.log(this.data);
+        localStorage.setItem('weatherData', JSON.stringify(this.weatherData));
+        const r = localStorage.getItem('weatherData');
+        console.log(r);
       },
       error: (error) => console.log(error.message),
       complete: () => console.info('API call completed'),
