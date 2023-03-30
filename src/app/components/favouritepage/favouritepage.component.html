@@ -1,1 +1,22 @@
-<p>favouritepage works!</p>
+<div class="card-container-web">
+    <div class="no-of-cards" *ngIf="favList.length>0">
+        <p>{{favList.length}} City added as Favourite Search</p>
+        <p (click)="deleteFav()">Remove All</p>
+    </div>
+
+    <div class="card" *ngFor="let data of favList">
+        <div class="card-innertext-div">
+            <p class="card-city-text">{{data.name}}</p>
+        </div>
+        <div class="web">
+
+            <span class="card-temp-text">{{(data.main.temp- 273.15).toFixed(1)}}</span>
+            <span> °C </span>
+            <span class="card-climate-text">{{data.weather[0].description}}</span>
+        </div>
+
+    </div>
+
+
+
+</div>

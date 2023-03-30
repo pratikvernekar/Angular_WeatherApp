@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   constructor(private weatherService: WeatherService, public router: Router) {}
   ngOnInit(): void {
     // localStorage.clear()
- 
   }
   changeFn(event: any) {
     this.weatherService.getCities(event).subscribe((res: any) => {
@@ -40,10 +39,8 @@ export class HeaderComponent implements OnInit {
             this.rescentData = localStorage.getItem('rescentData');
             let data = JSON.parse(this.rescentData);
             this.rescentArray = [this.weatherData, ...data];
-            // console.log('before push', this.rescentArray);
           } else {
             this.rescentArray = [this.weatherData];
-            // console.log('before push', this.rescentArray);
           }
           localStorage.setItem(
             'rescentData',
@@ -56,6 +53,7 @@ export class HeaderComponent implements OnInit {
       complete: () => console.info('API call completed'),
     });
   }
+ 
 
   refresh() {
     this.router.navigate(['']).then(() => {

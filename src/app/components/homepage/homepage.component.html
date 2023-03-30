@@ -1,10 +1,17 @@
 <div class="main1">
     <p class="city-text">{{data.name}}</p>
     <div class="fav-div">
-        <img src="../../../assets/images/icon_favourite.png" style="width: 20px ;height:20px">
-        Add to favourite
+
+
+        <img src="../../../assets/images/icon_favourite.png" style="width: 20px ;height:20px" (click)="AddToFav(data)"
+            *ngIf="text==='Add to favourite'">
+          
+        <img src="../../../assets/images/04_Favourite/Group 3/icon_favourite_Active.png"
+        (click)="removeFav(data)"
+            *ngIf="text==='Added to favourite'" style="width: 20px ;height:20px">
+        <span [innerText]="text"></span>
     </div>
-    <img src="{{img}}" style="width: 100px ;height: 100px;align-self: center;margin-top: 8rem;">
+    <img [src]="img" style="width: 100px ;height: 100px;align-self: center;margin-top: 8rem;">
 
     <div style="display:flex;
     justify-content: center;align-items: center;">

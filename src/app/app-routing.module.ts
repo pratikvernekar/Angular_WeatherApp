@@ -5,6 +5,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { RescentpageComponent } from './components/rescentpage/rescentpage.component';
 
 const routes: Routes = [
+  
   {
     path: '',
     component: HomepageComponent,
